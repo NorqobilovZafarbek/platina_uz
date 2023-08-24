@@ -15,17 +15,24 @@ class CustomPost extends StatefulWidget {
 class _CustomPost extends State<CustomPost> {
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      trailing: Image.asset(AppIcons.postIcon),
-      contentPadding: EdgeInsets.zero,
-      title: Text(
-        "Иқтисодиётимиздаги “саратон”дан қачон қутуламиз?",
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          color: AppColors.blue,
+    return SizedBox(
+      height: 120.h,
+      width: double.infinity,
+      child: ListTile(
+        trailing: Image.asset(fit: BoxFit.fill, AppIcons.postIcon),
+        contentPadding: EdgeInsets.zero,
+        title: Text(
+          "Иқтисодиётимиздаги “саратон”дан қачон қутуламиз?",
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            color: AppColors.blue,
+          ),
+        ),
+        subtitle: CustomText(
+          text1: "Жамият",
+          text2: "20 дақиқа аввал",
         ),
       ),
-      subtitle: CustomText(text1: "Жамият",text2: "20 дақиқа аввал",),
     );
   }
 }

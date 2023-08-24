@@ -4,6 +4,11 @@ class CategoriesModel {
   String? slug;
   String? color;
 
+  @override
+  String toString() {
+    return 'CategoriesModel{id: $id, name: $name, slug: $slug, color: $color}';
+  }
+
   CategoriesModel({
     this.id,
     this.name,

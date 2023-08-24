@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../../common/constants/app_icons.dart';
+
 class CustomListTile extends StatefulWidget {
   final String title;
-  final String path;
+  final int color;
   final void Function() onTap;
+  bool isCelected;
 
-  const CustomListTile({
+  CustomListTile({
     Key? key,
     required this.title,
-    required this.path,
+    required this.color,
     required this.onTap,
+    this.isCelected = false,
   }) : super(key: key);
 
   @override
@@ -17,12 +21,14 @@ class CustomListTile extends StatefulWidget {
 }
 
 class _CustomListTile extends State<CustomListTile> {
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(widget.title),
       leading: Image(
-        image: AssetImage(widget.path),
+        color: widget.isCelected ? Color(widget.color) : Colors.transparent,
+        image: AssetImage(AppIcons.onSelectedRadio),
       ),
       onTap: widget.onTap,
     );
